@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <main></main>
+  <main>
+    <Button @click="console.log('Hello')">PrimeVue Works</Button>
+  </main>
 </template>
