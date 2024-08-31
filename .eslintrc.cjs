@@ -3,6 +3,7 @@ require('@rushstack/eslint-patch/modern-module-resolution');
 
 module.exports = {
   root: true,
+  plugins: ['perfectionist'],
   extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
@@ -12,7 +13,7 @@ module.exports = {
   overrides: [
     {
       files: ['e2e/**/*.{test,spec}.{js,ts,jsx,tsx}'],
-      extends: ['plugin:playwright/recommended'],
+      extends: ['plugin:playwright/recommended', 'plugin:perfectionist/recommended-natural-legacy'],
     },
   ],
   parserOptions: {
