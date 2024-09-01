@@ -1,17 +1,13 @@
 <script setup lang="ts">
 import { TaskService } from '@/features/home/services/task.service';
 import { inject } from 'vue';
-import { onMounted } from 'vue';
 import useTasks from '@/features/home/hooks/use-tasks.hook';
 import EmptyState from '@/shared/components/empty-state.vue';
 import ErrorState from '@/shared/components/error-state.vue';
+import DeleteTaskButton from '@/features/delete-task/delete-task-button.vue';
 
 const taskService = inject(TaskService.name);
 const { isPending, isError, data: tasks } = useTasks(taskService);
-
-onMounted(() => {
-  taskService.getTasks();
-});
 </script>
 
 <template>
@@ -28,7 +24,7 @@ onMounted(() => {
             <div class="w-full">
               <div class="flex justify-end gap-2">
                 <Button icon="ph ph-pencil" icon-pos="right" label="Edit" severity="info" />
-                <Button icon="ph ph-trash" icon-pos="right" label="Delete" severity="danger" />
+                <DeleteTaskButton :id="task.id" />
               </div>
             </div>
           </AccordionContent>

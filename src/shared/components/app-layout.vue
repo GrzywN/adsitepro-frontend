@@ -83,4 +83,5 @@ const handleCloseCreateTaskCategoryDialog = () => {
   />
 
   <Toast />
+  <ConfirmDialog />
 </template>
