@@ -2,7 +2,10 @@ import HomeView from '@/features/home/home-view.vue';
 import LoginView from '@/features/login/login-view.vue';
 import type { Component } from 'vue';
 
-export type Routes = Record<string, { path: string; name: string; component: Component }>;
+export type Routes = Record<
+  string,
+  { path: string; name: string; component: Component; isPublic?: boolean }
+>;
 
 export const routes: Routes = {
   home: {

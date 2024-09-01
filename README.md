@@ -4,15 +4,17 @@
 
 Get ready for an exciting adventure! :)
 
-__Technologies:__
+**Technologies:**
+
 - Backend: Laravel (PHP)
 - Frontend: Vue.js + Tailwind CSS
 
-__Assumptions:__
+**Assumptions:**
 
 You are to create a simple TO-DO application for task creation. In the application, the user will be able to create task categories and then add tasks to them. When creating a task, the user should be able to assign a person to it from the available application users and specify how many minutes it will take to complete the task. Each person has a 9600-minute limit, which resets on the 1st day of the month.
 
-__Finally, the application should allow:__
+**Finally, the application should allow:**
+
 - Managing users
 - Adding task categories and tasks
 

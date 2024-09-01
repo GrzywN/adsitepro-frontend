@@ -1,7 +1,7 @@
 import { useAuthStore } from '@/shared/stores/use-auth-store';
 import axios, { type AxiosRequestConfig, type AxiosResponse } from 'axios';
-import { z } from 'zod';
 import { StatusCodes } from 'http-status-codes';
+import { z } from 'zod';
 
 export const baseUrl = z
   .string()
@@ -22,7 +22,10 @@ client.interceptors.response.use(
     return response;
   },
   async (error) => {
-    if (error.response?.status == StatusCodes.UNAUTHORIZED || error.response?.status == StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE) {
+    if (
+      error.response?.status == StatusCodes.UNAUTHORIZED ||
+      error.response?.status == StatusCodes.INSUFFICIENT_SPACE_ON_RESOURCE
+    ) {
       await useAuthStore().logout();
     }
 

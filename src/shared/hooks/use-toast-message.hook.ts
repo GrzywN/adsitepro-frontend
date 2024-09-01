@@ -5,7 +5,11 @@ const life = 3000 as const;
 export const useToastMessage = () => {
   const toast = useToast();
 
-  const add = (severity: string, summary: string, detail: string) => {
+  const add = (
+    severity: 'success' | 'error' | 'info' | 'warn' | 'secondary' | 'contrast',
+    summary: string,
+    detail: string,
+  ) => {
     toast.add({
       severity,
       summary,

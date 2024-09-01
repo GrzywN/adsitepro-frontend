@@ -2,7 +2,7 @@
 import CreateTaskCategoryForm from '@/features/create-task-category/components/create-task-category-form.vue';
 
 const emit = defineEmits<{
-  success: () => void;
+  success: [];
 }>();
 
 const visible = defineModel();

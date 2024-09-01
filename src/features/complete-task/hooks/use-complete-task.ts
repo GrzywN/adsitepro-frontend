@@ -14,12 +14,14 @@ export const useCompleteTask = (taskService: TaskService) => {
     mutationFn: taskService.completeTask,
     mutationKey: COMPLETE_TASK_MUTATION_KEY,
     onSuccess: async () => {
-      await queryClient.invalidateQueries(TASKS_QUERY_KEY);
+      await queryClient.invalidateQueries({
+        queryKey: TASKS_QUERY_KEY,
+      });
 
-      success('Task completed successfully');
+      success('Task completed successfully', 'The task has been marked as completed');
     },
     onError: () => {
-      error('Task completion failed');
+      error('Task completion failed', 'Please try again');
     },
   });
 };

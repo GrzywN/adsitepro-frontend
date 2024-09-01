@@ -2,13 +2,10 @@
 import { useForm } from 'vee-validate';
 import FormField from '@/shared/components/form-field.vue';
 import { toTypedSchema } from '@vee-validate/zod';
-import {
-  createTaskFormSchema,
-  type CreateTaskForm,
-} from '@/features/create-task/schemas/create-task.schema';
+import { createTaskFormSchema, type CreateTaskForm } from '@/shared/schemas/create-task.schema';
 import Textarea from 'primevue/textarea';
 import TaskCategoryAutocomplete from '@/shared/components/task-category-autocomplete.vue';
-import { TaskCategoryService } from '@/features/home/services/task-category.service';
+import { TaskCategoryService } from '@/shared/services/task-category.service';
 import { provide } from 'vue';
 import { TaskService } from '@/features/home/services/task.service';
 import UserAutocomplete from '@/shared/components/user-autocomplete.vue';
@@ -17,7 +14,7 @@ import { useCreateTask } from '@/features/create-task/hooks/use-create-task';
 import InputNumber from 'primevue/inputnumber';
 
 const emit = defineEmits<{
-  success: () => void;
+  success: [];
 }>();
 
 const userService = new UserService();
@@ -32,9 +29,9 @@ const { handleSubmit } = useForm<CreateTaskForm>({
   initialValues: {
     title: '',
     description: '',
-    category_id: null,
-    assigned_user_id: null,
-    estimated_minutes: null,
+    category_id: undefined,
+    assigned_user_id: undefined,
+    estimated_minutes: undefined,
   },
   validationSchema: toTypedSchema(createTaskFormSchema),
 });

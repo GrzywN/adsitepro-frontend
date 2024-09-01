@@ -14,12 +14,14 @@ export const useDeleteTask = (taskService: TaskService) => {
     mutationFn: taskService.deleteTask,
     mutationKey: DELETE_TASK_MUTATION_KEY,
     onSuccess: async () => {
-      await queryClient.invalidateQueries(TASKS_QUERY_KEY);
+      await queryClient.invalidateQueries({
+        queryKey: TASKS_QUERY_KEY,
+      });
 
-      success('Task deleted successfully');
+      success('Task deleted successfully', 'The task has been removed');
     },
     onError: () => {
-      error('Task deletion failed');
+      error('Task deletion failed', 'Please try again');
     },
   });
 };

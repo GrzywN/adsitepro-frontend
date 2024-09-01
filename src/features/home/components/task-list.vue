@@ -7,7 +7,7 @@ import ErrorState from '@/shared/components/error-state.vue';
 import DeleteTaskButton from '@/features/delete-task/delete-task-button.vue';
 import CompleteTaskButton from '@/features/complete-task/complete-task-button.vue';
 
-const taskService = inject(TaskService.name);
+const taskService = inject<TaskService>(TaskService.name)!;
 const { isPending, isError, data: tasks } = useTasks(taskService);
 </script>
 

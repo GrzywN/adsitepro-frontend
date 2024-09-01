@@ -2,7 +2,7 @@
 import CreateTaskForm from '@/features/create-task/components/create-task-form.vue';
 
 const emit = defineEmits<{
-  success: () => void;
+  success: [];
 }>();
 
 const visible = defineModel();

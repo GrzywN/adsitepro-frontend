@@ -14,7 +14,7 @@ export type CompleteTaskButtonProps = {
 
 const { id } = defineProps<CompleteTaskButtonProps>();
 const emit = defineEmits<{
-  success: () => void;
+  success: [];
 }>();
 
 const { require } = useConfirmDialog();
@@ -22,7 +22,7 @@ const { mutateAsync } = useCompleteTask(taskService);
 
 const handleComplete = () => {
   require({
-    title: 'Complete Task',
+    header: 'Complete Task',
     message: 'Are you sure you want to complete this task?',
     accept: async () => {
       await mutateAsync(id, {

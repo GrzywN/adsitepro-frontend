@@ -1,4 +1,4 @@
-import type { TaskCategoryService } from '@/features/home/services/task-category.service';
+import type { TaskCategoryService } from '@/shared/services/task-category.service';
 import { useQuery } from '@tanstack/vue-query';
 import type { Ref } from 'vue';
 
