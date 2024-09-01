@@ -16,7 +16,7 @@ export type UpdateSchema<T> = {
   data: T;
 };
 
-export type DeleteSchema<T> = {
+export type DeleteSchema<_> = {
   message?: string;
   success: boolean;
 };
@@ -45,7 +45,7 @@ export const toUpdateSchema = <T>(schema: ZodTypeAny): UpdateSchema<T> => {
   });
 };
 
-export const toDeleteSchema = <T>(schema: ZodTypeAny): DeleteSchema<T> => {
+export const toDeleteSchema = <T>(_: ZodTypeAny): DeleteSchema<T> => {
   return z.object({
     message: z.string().optional(),
     success: z.boolean(),

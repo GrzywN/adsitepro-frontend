@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useField, useFieldError } from 'vee-validate';
-import { type Component, type VNode } from 'vue';
+import { type Component, provide, type VNode } from 'vue';
 
 defineOptions({
   inheritAttrs: false,
@@ -17,6 +17,8 @@ const props = withDefaults(defineProps<FormFieldProps>(), {
   isRequired: true,
   component: undefined,
 });
+
+provide('fieldName', props.name);
 
 const { value } = useField<string>(
   () => props.name,

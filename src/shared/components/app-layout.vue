@@ -1,10 +1,31 @@
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
+import CreateTaskDialog from '@/features/create-task/create-task-dialog.vue';
+import CreateTaskCategoryDialog from '@/shared/components/create-task-category-dialog.vue';
 
 defineProps({
   iconClass: String,
   title: String,
 });
+
+const isCreateTaskDialogVisible = ref(false);
+const isCreateTaskCategoryDialogVisible = ref(false);
+
+const handleCreateTask = () => {
+  isCreateTaskDialogVisible.value = true;
+};
+
+const handleCloseCreateTaskDialog = () => {
+  isCreateTaskDialogVisible.value = false;
+};
+
+const handleCreateTaskCategory = () => {
+  isCreateTaskCategoryDialogVisible.value = true;
+};
+
+const handleCloseCreateTaskCategoryDialog = () => {
+  isCreateTaskCategoryDialogVisible.value = false;
+};
 </script>
 
 <template>
@@ -26,6 +47,7 @@ defineProps({
           label="Add task"
           class="mr-2"
           severity="primary"
+          @click="handleCreateTask"
         />
         <Button
           icon="ph ph-plus"
@@ -33,6 +55,7 @@ defineProps({
           label="Add task category"
           class="mr-2"
           severity="secondary"
+          @click="handleCreateTaskCategory"
         />
       </template>
     </Toolbar>
@@ -49,4 +72,15 @@ defineProps({
       </template>
     </Card>
   </main>
+
+  <CreateTaskDialog
+    v-model:visible="isCreateTaskDialogVisible"
+    @success="handleCloseCreateTaskDialog"
+  />
+  <CreateTaskCategoryDialog
+    v-model:visible="isCreateTaskCategoryDialogVisible"
+    @success="handleCloseCreateTaskCategoryDialog"
+  />
+
+  <Toast />
 </template>

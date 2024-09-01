@@ -8,7 +8,7 @@ import Password from 'primevue/password';
 
 const { login } = useAuthStore();
 
-const { handleSubmit, values } = useForm<LoginForm>({
+const { handleSubmit } = useForm<LoginForm>({
   initialValues: {
     email: import.meta.env.DEV ? 'admin@example.com' : '',
     password: import.meta.env.DEV ? 'zaq1@WSX' : '',
@@ -26,7 +26,14 @@ const onSubmit = handleSubmit(async (values: LoginForm) => {
 <template>
   <form class="flex flex-col gap-2">
     <FormField id="email" type="email" name="email" label="Email" autocomplete="email" />
-    <FormField :component="Password" type="password" name="password" label="Password" toggleMask autocomplete="current-password" />
+    <FormField
+      :component="Password"
+      type="password"
+      name="password"
+      label="Password"
+      toggleMask
+      autocomplete="current-password"
+    />
 
     <Button class="mt-4" type="submit" @click="onSubmit">Login</Button>
   </form>
