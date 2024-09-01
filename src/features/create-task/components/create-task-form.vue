@@ -15,6 +15,7 @@ import UserAutocomplete from '@/shared/components/user-autocomplete.vue';
 import { UserService } from '@/shared/services/user.service';
 import DatePicker from 'primevue/datepicker';
 import { useCreateTask } from '@/features/create-task/hooks/use-create-task';
+import InputNumber from 'primevue/inputnumber';
 
 const emit = defineEmits<{
   success: () => void;
@@ -34,7 +35,7 @@ const { handleSubmit } = useForm<CreateTaskForm>({
     description: '',
     category_id: null,
     assigned_user_id: null,
-    due_date: new Date(),
+    estimated_minutes: null,
   },
   validationSchema: toTypedSchema(createTaskFormSchema),
 });
@@ -44,7 +45,6 @@ const { mutateAsync } = useCreateTask(taskService);
 const onSubmit = handleSubmit(async (values: CreateTaskForm) => {
   await mutateAsync(values, {
     onSuccess: () => {
-      console.log('Task created successfully');
       emit('success');
     },
   });
@@ -57,7 +57,7 @@ const onSubmit = handleSubmit(async (values: CreateTaskForm) => {
     <FormField :component="Textarea" name="description" label="Description" max="1000" />
     <FormField :component="TaskCategoryAutocomplete" name="category_id" label="Category" />
     <FormField :component="UserAutocomplete" name="assigned_user_id" label="Assigned user" />
-    <FormField :component="DatePicker" name="due_date" label="Due date" />
+    <FormField :component="InputNumber" name="estimated_minutes" label="Estimated minutes" />
 
     <Button class="mt-4" type="submit" @click="onSubmit">Create</Button>
   </form>

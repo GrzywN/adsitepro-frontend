@@ -31,15 +31,6 @@ const handleCloseCreateTaskCategoryDialog = () => {
 <template>
   <main class="flex flex-col gap-4 px-6 py-8">
     <Toolbar>
-      <template #start>
-        <IconField>
-          <InputIcon>
-            <i class="ph ph-magnifying-glass" />
-          </InputIcon>
-          <InputText placeholder="Search" />
-        </IconField>
-      </template>
-
       <template #end>
         <Button
           icon="ph ph-plus"

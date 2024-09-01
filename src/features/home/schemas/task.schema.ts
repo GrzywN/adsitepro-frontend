@@ -9,7 +9,7 @@ export const taskSchema = z.object({
   category: taskCategorySchema,
   owner: userSchema,
   assigned_user: userSchema,
-  due_date: z.string(),
+  estimated_minutes: z.number(),
   completed_at: z.string().nullable(),
 });
 
