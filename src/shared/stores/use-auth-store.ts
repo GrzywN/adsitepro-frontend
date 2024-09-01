@@ -40,7 +40,7 @@ export const useAuthStore = defineStore({
   },
 
   getters: {
-    isLoggedIn() {
+    isLoggedIn(): boolean {
       return !!this.user;
     },
   },
