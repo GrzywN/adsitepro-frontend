@@ -44,7 +44,7 @@ const handleCloseCreateTaskCategoryDialog = () => {
         <Button
           icon="ph ph-plus"
           icon-pos="right"
-          label="Add task"
+          label="Create task"
           class="mr-2"
           severity="primary"
           @click="handleCreateTask"
@@ -52,7 +52,7 @@ const handleCloseCreateTaskCategoryDialog = () => {
         <Button
           icon="ph ph-plus"
           icon-pos="right"
-          label="Add task category"
+          label="Create task category"
           class="mr-2"
           severity="secondary"
           @click="handleCreateTaskCategory"
