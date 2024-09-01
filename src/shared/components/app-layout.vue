@@ -2,6 +2,7 @@
 import { defineProps, ref } from 'vue';
 import CreateTaskDialog from '@/features/create-task/create-task-dialog.vue';
 import CreateTaskCategoryDialog from '@/features/create-task-category/create-task-category-dialog.vue';
+import LogoutButton from '@/features/logout/logout-button.vue';
 
 defineProps({
   iconClass: String,
@@ -31,7 +32,7 @@ const handleCloseCreateTaskCategoryDialog = () => {
 <template>
   <main class="flex flex-col gap-4 px-6 py-8">
     <Toolbar>
-      <template #end>
+      <template #start>
         <Button
           icon="ph ph-plus"
           icon-pos="right"
@@ -48,6 +49,10 @@ const handleCloseCreateTaskCategoryDialog = () => {
           severity="secondary"
           @click="handleCreateTaskCategory"
         />
+      </template>
+
+      <template #end>
+        <LogoutButton />
       </template>
     </Toolbar>
 
