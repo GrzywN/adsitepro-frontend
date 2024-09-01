@@ -1,64 +1,61 @@
-# adsitepro-frontend
+# An recruitment task for adsite.pro company.
 
-This template should help get you started developing with Vue 3 in Vite.
+## Task
 
-## Recommended IDE Setup
+Get ready for an exciting adventure! :)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+__Technologies:__
+- Backend: Laravel (PHP)
+- Frontend: Vue.js + Tailwind CSS
 
-## Type Support for `.vue` Imports in TS
+__Assumptions:__
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+You are to create a simple TO-DO application for task creation. In the application, the user will be able to create task categories and then add tasks to them. When creating a task, the user should be able to assign a person to it from the available application users and specify how many minutes it will take to complete the task. Each person has a 9600-minute limit, which resets on the 1st day of the month.
 
-## Customize configuration
+__Finally, the application should allow:__
+- Managing users
+- Adding task categories and tasks
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The rest is up to your creativity.
 
-## Project Setup
+We will primarily evaluate the quality of the code, and to a lesser extent, the appearance of the application.
 
-```sh
-npm install
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/GrzywN/adsitepro-frontend.git
 ```
 
-### Compile and Hot-Reload for Development
+Go to the project directory
 
-```sh
-npm run dev
+```bash
+  cd adsitepro-frontend
 ```
+
+Copy environmental config
+
+```bash
+  cp .env.example .env
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Run the development server
+
+```bash
+  npm run dev
+```
+
+Your app should now be running on [localhost:5173](http://localhost:5173).
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
