@@ -21,11 +21,16 @@
   },
   "dependencies": {
     "@primevue/themes": "4.0.5",
+    "@vee-validate/zod": "4.13.2",
+    "axios": "1.7.6",
     "pinia": "2.2.2",
+    "pinia-plugin-persistedstate": "3.2.3",
     "prettier-plugin-organize-imports": "4.0.0",
     "primevue": "4.0.5",
+    "vee-validate": "4.13.2",
     "vue": "3.4.38",
-    "vue-router": "4.4.3"
+    "vue-router": "4.4.3",
+    "zod": "3.23.8"
   },
   "devDependencies": {
     "@playwright/test": "1.46.1",
