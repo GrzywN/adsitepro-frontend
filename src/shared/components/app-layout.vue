@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { defineProps, ref } from 'vue';
 import CreateTaskDialog from '@/features/create-task/create-task-dialog.vue';
-import CreateTaskCategoryDialog from '@/shared/components/create-task-category-dialog.vue';
+import CreateTaskCategoryDialog from '@/features/create-task-category/create-task-category-dialog.vue';
 
 defineProps({
   iconClass: String,

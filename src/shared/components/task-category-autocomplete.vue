@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTaskCategoryAutocomplete } from '@/features/create-task/hooks/use-task-category-autocomplete.hook';
+import { useTaskCategoryAutocomplete } from '@/shared/hooks/use-task-category-autocomplete.hook';
 import { useField } from 'vee-validate';
 import { TaskCategoryService } from '@/features/home/services/task-category.service';
 import { inject } from 'vue';

@@ -7,11 +7,11 @@ import {
   type CreateTaskForm,
 } from '@/features/create-task/schemas/create-task.schema';
 import Textarea from 'primevue/textarea';
-import TaskCategoryAutocomplete from '@/features/create-task/components/task-category-autocomplete.vue';
+import TaskCategoryAutocomplete from '@/shared/components/task-category-autocomplete.vue';
 import { TaskCategoryService } from '@/features/home/services/task-category.service';
 import { provide } from 'vue';
 import { TaskService } from '@/features/home/services/task.service';
-import UserAutocomplete from '@/features/create-task/components/user-autocomplete.vue';
+import UserAutocomplete from '@/shared/components/user-autocomplete.vue';
 import { UserService } from '@/shared/services/user.service';
 import DatePicker from 'primevue/datepicker';
 import { useCreateTask } from '@/features/create-task/hooks/use-create-task';

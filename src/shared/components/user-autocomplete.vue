@@ -3,7 +3,7 @@ import { useField } from 'vee-validate';
 import { inject } from 'vue';
 import ErrorState from '@/shared/components/error-state.vue';
 import { UserService } from '@/shared/services/user.service';
-import { useUserAutocomplete } from '@/features/create-task/hooks/use-user-autocomplete.hook';
+import { useUserAutocomplete } from '@/shared/hooks/use-user-autocomplete.hook';
 
 const fieldName = inject('fieldName');
 const userService = inject(UserService.name);
