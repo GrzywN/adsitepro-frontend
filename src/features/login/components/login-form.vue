@@ -25,8 +25,8 @@ const onSubmit = handleSubmit(async (values: LoginForm) => {
 
 <template>
   <form class="flex flex-col gap-2">
-    <FormField id="email" type="text" name="email" label="Email" />
-    <FormField :component="Password" name="password" label="Password" toggleMask />
+    <FormField id="email" type="email" name="email" label="Email" autocomplete="email" />
+    <FormField :component="Password" type="password" name="password" label="Password" toggleMask autocomplete="current-password" />
 
     <Button class="mt-4" type="submit" @click="onSubmit">Login</Button>
   </form>
