@@ -2,6 +2,7 @@ import {
   baseUrl,
   deleteRequest,
   getRequest,
+  patchRequest,
   postRequest,
   putRequest,
 } from '@/core/http/http-client';
@@ -53,5 +54,12 @@ export class TaskService {
     const response = await deleteRequest(url);
 
     return toDeleteSchema(taskSchema).parse(response.data);
+  }
+
+  async completeTask(id: number): Promise<UpdateSchema<Task>> {
+    const url = new URL(`/api/v1/tasks/${id}/complete`, baseUrl);
+    const response = await patchRequest(url);
+
+    return toUpdateSchema(taskSchema).parse(response.data);
   }
 }

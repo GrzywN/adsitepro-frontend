@@ -13,7 +13,6 @@ import { provide } from 'vue';
 import { TaskService } from '@/features/home/services/task.service';
 import UserAutocomplete from '@/shared/components/user-autocomplete.vue';
 import { UserService } from '@/shared/services/user.service';
-import DatePicker from 'primevue/datepicker';
 import { useCreateTask } from '@/features/create-task/hooks/use-create-task';
 import InputNumber from 'primevue/inputnumber';
 
