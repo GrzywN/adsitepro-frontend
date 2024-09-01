@@ -20,7 +20,9 @@
     "format": "prettier --write . --cache"
   },
   "dependencies": {
+    "@phosphor-icons/web": "2.1.1",
     "@primevue/themes": "4.0.5",
+    "@tanstack/vue-query": "5.53.1",
     "@vee-validate/zod": "4.13.2",
     "axios": "1.7.6",
     "pinia": "2.2.2",

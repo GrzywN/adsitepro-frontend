@@ -1,6 +1,6 @@
-import { isProtectedPath, routes } from './routes';
 import { useAuthStore } from '@/shared/stores/use-auth-store';
 import { createRouter, createWebHistory } from 'vue-router';
+import { isProtectedPath, routes } from './routes';
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

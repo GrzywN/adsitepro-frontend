@@ -1,5 +1,11 @@
 import { useAuthStore } from '@/shared/stores/use-auth-store';
 import axios, { type AxiosRequestConfig, type AxiosResponse } from 'axios';
+import { z } from 'zod';
+
+export const baseUrl = z
+  .string()
+  .min(1)
+  .parse(import.meta.env.VITE_API_URL);
 
 export const client = axios.create({
   withCredentials: true,

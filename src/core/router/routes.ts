@@ -1,4 +1,4 @@
-import HomeView from '@/features/HomeView.vue';
+import HomeView from '@/features/home/home-view.vue';
 import LoginView from '@/features/login/login-view.vue';
 import type { Component } from 'vue';
 
